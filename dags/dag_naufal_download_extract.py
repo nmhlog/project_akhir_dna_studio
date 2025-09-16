@@ -8,7 +8,7 @@ import zipfile
 
 def download_file_from_gdrive():
     # Link download langsung dari Google Drive
-    file_id = Variable.get("file_id_naufal", default_var="1zVER3BGOcF4URiIebR_nBB8faZnYY4yP")
+    file_id = Variable.get("file_id_dag_naufal", default_var="1zVER3BGOcF4URiIebR_nBB8faZnYY4yP")
     output_file_zip = Variable.get("output_file_zip", default_var="dags/data/download_file.zip")
     url = f"https://drive.google.com/uc?export=download&id={file_id}"
 
@@ -28,13 +28,19 @@ def download_file_from_gdrive():
 def unzip_in_same_folder():
     input_zip = Variable.get("output_file_zip", default_var="dags/data/download_file.zip")
 
-    # folder asal file zip
+    # Directory where zip file is located
     output_dir = os.path.dirname(input_zip)
 
     with zipfile.ZipFile(input_zip, 'r') as zip_ref:
-        zip_ref.extractall(output_dir)
+        for file in zip_ref.namelist():
+            if file.startswith("DNAstudio_DataEngineering_ProjectFinal/INPUT/"):
+                # Extract relative to parent folder to keep only INPUT folder structure
+                relative_path = os.path.relpath(file, "DNAstudio_DataEngineering_ProjectFinal")
+                target_path = os.path.join(output_dir, relative_path)
+                os.makedirs(os.path.dirname(target_path), exist_ok=True)
+                with zip_ref.open(file) as source, open(target_path, "wb") as target:
+                    target.write(source.read())
 
-    print(f"✅ File {input_zip} berhasil di-unzip ke {output_dir}")
     
 def delete_download_file():
     
