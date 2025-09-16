@@ -1,0 +1,123 @@
+services:
+  postgres:
+    image: postgres:15
+    container_name: airflow_postgres
+    environment:
+      POSTGRES_USER: airflow
+      POSTGRES_PASSWORD: airflow
+      POSTGRES_DB: airflow
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7
+    container_name: airflow_redis
+    ports:
+      - "6379:6379"
+
+  spark-master:
+    image: bitnami/spark:latest
+    container_name: spark-master
+    environment:
+      SPARK_MODE: master
+      SPARK_RPC_AUTHENTICATION_ENABLED: "no"
+    ports:
+      - "7077:7077"
+      - "8081:8080"
+    volumes:
+      - ./data:/mnt/data
+
+  spark-worker:
+    image: bitnami/spark:latest
+    container_name: spark-worker
+    depends_on:
+      - spark-master
+    environment:
+      SPARK_MODE: worker
+      SPARK_MASTER_URL: spark://spark-master:7077
+    volumes:
+      - ./data:/mnt/data
+
+  airflow-webserver:
+    image: apache/airflow:2.11.0-python3.11
+    container_name: airflow_webserver
+    depends_on:
+      - postgres
+      - redis
+      - airflow-scheduler
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
+      AIRFLOW__CORE__DAGS_ARE_PAUSED_AT_CREATION: "false"
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./spark/jobs:/opt/spark/jobs
+      - ./data:/mnt/data
+    ports:
+      - "8080:8080"
+    command:
+      - bash
+      - -c
+      - >
+        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
+        airflow db upgrade &&
+        airflow users create --username airflow --firstname Airflow --lastname Admin --role Admin --email airflow@example.com --password airflow || true &&
+        exec airflow webserver --hostname 0.0.0.0
+
+  airflow-scheduler:
+    image: apache/airflow:2.11.0-python3.11
+    container_name: airflow_scheduler
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./spark/jobs:/opt/spark/jobs
+      - ./data:/mnt/data
+    command:
+      - bash
+      - -c
+      - >
+        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
+        exec airflow scheduler
+
+  airflow-worker:
+    image: apache/airflow:2.11.0-python3.11
+    container_name: airflow_worker
+    depends_on:
+      - postgres
+      - redis
+    environment:
+      AIRFLOW__CORE__EXECUTOR: CeleryExecutor
+      AIRFLOW__CORE__SQL_ALCHEMY_CONN: postgresql+psycopg2://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
+      AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
+      AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+    volumes:
+      - ./airflow/dags:/opt/airflow/dags
+      - ./airflow/plugins:/opt/airflow/plugins
+      - ./spark/jobs:/opt/spark/jobs
+      - ./data:/mnt/data
+    command:
+      - bash
+      - -c
+      - >
+        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
+        exec airflow celery worker
+
+volumes:
+  postgres_data:
