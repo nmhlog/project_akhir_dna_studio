@@ -6,7 +6,7 @@ import os
 import pendulum  
 import zipfile
 
-def download_file_from_gdrive(file_id, output):
+def download_file_from_gdrive():
     # Link download langsung dari Google Drive
     file_id = Variable.get("file_id_naufal", default_var="zVER3BGOcF4URiIebR_nBB8faZnYY4yP")
     output = Variable.get("output", default_var="dags/data/download_file.zip")
@@ -47,7 +47,7 @@ def delete_download_file():
         print(f"⚠️ File {input_zip} tidak ditemukan")   
 
 with DAG(
-    dag_id="ingest_data",
+    dag_id="dag_naufal_download_data_zip",
     start_date=pendulum.datetime(2025, 1, 1, tz=pendulum.timezone("Asia/Jakarta")),  # ✅ pakai pendulum
     schedule_interval=None,
     catchup=False
@@ -62,5 +62,11 @@ with DAG(
         task_id="unzip_in_same_folder",
         python_callable=unzip_in_same_folder
     )
+    
+    
+    delete_download_file = PythonOperator(
+        task_id="delete_download_file",
+        python_callable=delete_download_file
+    )
 
-    download_task >> unzip_task
+    download_task >> unzip_task>>delete_download_file
