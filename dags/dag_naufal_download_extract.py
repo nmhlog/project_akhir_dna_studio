@@ -8,7 +8,7 @@ import zipfile
 
 def download_file_from_gdrive():
     # Link download langsung dari Google Drive
-    file_id = Variable.get("file_id_naufal", default_var="zVER3BGOcF4URiIebR_nBB8faZnYY4yP")
+    file_id = Variable.get("file_id_naufal", default_var="1zVER3BGOcF4URiIebR_nBB8faZnYY4yP")
     output_file_zip = Variable.get("output_file_zip", default_var="dags/data/download_file.zip")
     url = f"https://drive.google.com/uc?export=download&id={file_id}"
 
@@ -23,7 +23,7 @@ def download_file_from_gdrive():
                 f.write(chunk)
         print(f"File berhasil diunduh ke: {output_file_zip}")
     else:
-        print(f"Gagal download, status code: {response.status_code}")
+        print(response)
         
 def unzip_in_same_folder():
     input_zip = Variable.get("output_file_zip", default_var="dags/data/download_file.zip")
