@@ -9,7 +9,7 @@ DATA_DIR = "/mnt/data"
 INPUT_FILE = os.path.join(DATA_DIR, "input.csv")
 OUTPUT_DIR = os.path.join(DATA_DIR, "output")
 
-CSV_URL = "https://raw.githubusercontent.com/dataprofessor/data/master/penguins.csv"
+CSV_URL = "https://raw.githubusercontent.com/mwaskom/seaborn-data/master/penguins.csv"
 
 def download_csv():
     os.makedirs(DATA_DIR, exist_ok=True)

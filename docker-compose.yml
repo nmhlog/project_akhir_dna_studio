@@ -55,6 +55,8 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << tambah ini
+      TZ: Asia/Jakarta                                              # << sync timezone
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -83,6 +85,8 @@ services:
       AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << sama dengan webserver
+      TZ: Asia/Jakarta
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -107,6 +111,8 @@ services:
       AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << sama juga
+      TZ: Asia/Jakarta
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
