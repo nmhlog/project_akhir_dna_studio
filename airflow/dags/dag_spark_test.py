@@ -20,8 +20,8 @@ def download_csv():
 
 default_args = {
     "owner": "airflow",
-    "start_date": datetime(2025, 9, 16),
-    "retries": 1
+    "start_date": None,
+    "retries": 0
 }
 
 with DAG(
@@ -40,9 +40,8 @@ with DAG(
     # Task 2: Spark job
     t2_spark = SparkSubmitOperator(
         task_id="run_spark_job",
-        application="/opt/spark/jobs/my_spark_job.py",
-        name="arrow-spark",
-        conf={"spark.master": "spark://spark-master:7077"},
+        application="/opt/spark/jobs/my_spark_job.py",  # skrip spark yang kamu kasih tadi
+        conn_id="spark_default",  # pakai koneksi yang sudah kamu bikin di UI
         verbose=True,
         application_args=[
             INPUT_FILE,

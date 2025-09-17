@@ -15,6 +15,7 @@ ENV PATH="${JAVA_HOME}/bin:${PATH}"
 USER airflow
 
 # Install Python dependencies dengan user airflow
+# ⚡ versi pyspark dipaksa sama dengan spark cluster (3.5.1)
 RUN pip install --no-cache-dir \
     apache-airflow-providers-apache-spark \
-    pyspark
+    pyspark==3.5.1
