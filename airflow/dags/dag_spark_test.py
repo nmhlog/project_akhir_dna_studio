@@ -41,7 +41,8 @@ with DAG(
     t2_spark = SparkSubmitOperator(
         task_id="run_spark_job",
         application="/opt/spark/jobs/my_spark_job.py",
-        conn_id="spark_default",
+        name="arrow-spark",
+        conf={"spark.master": "spark://spark-master:7077"},
         verbose=True,
         application_args=[
             INPUT_FILE,
