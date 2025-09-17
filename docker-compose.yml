@@ -1,3 +1,5 @@
+version: "3.9"
+
 services:
   postgres:
     image: postgres:15
@@ -41,7 +43,10 @@ services:
       - ./data:/mnt/data
 
   airflow-webserver:
-    image: apache/airflow:2.11.0-python3.11
+    build:
+      context: .
+      dockerfile: airflow.Dockerfile
+    image: airflow-with-spark:latest
     container_name: airflow_webserver
     depends_on:
       - postgres
@@ -55,8 +60,11 @@ services:
       AIRFLOW__CORE__LOAD_EXAMPLES: "false"
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
-      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << tambah ini
-      TZ: Asia/Jakarta                                              # << sync timezone
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"
+      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+      SPARK_HOME: /opt/spark
+      PATH: /opt/spark/bin:$PATH
+      TZ: Asia/Jakarta
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
@@ -68,13 +76,15 @@ services:
       - bash
       - -c
       - >
-        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
         airflow db upgrade &&
         airflow users create --username airflow --firstname Airflow --lastname Admin --role Admin --email airflow@example.com --password airflow || true &&
         exec airflow webserver --hostname 0.0.0.0
 
   airflow-scheduler:
-    image: apache/airflow:2.11.0-python3.11
+    build:
+      context: .
+      dockerfile: airflow.Dockerfile
+    image: airflow-with-spark:latest
     container_name: airflow_scheduler
     depends_on:
       - postgres
@@ -85,22 +95,23 @@ services:
       AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
-      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << sama dengan webserver
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"
+      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+      SPARK_HOME: /opt/spark
+      PATH: /opt/spark/bin:$PATH
       TZ: Asia/Jakarta
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
       - ./spark/jobs:/opt/spark/jobs
       - ./data:/mnt/data
-    command:
-      - bash
-      - -c
-      - >
-        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
-        exec airflow scheduler
+    command: scheduler
 
   airflow-worker:
-    image: apache/airflow:2.11.0-python3.11
+    build:
+      context: .
+      dockerfile: airflow.Dockerfile
+    image: airflow-with-spark:latest
     container_name: airflow_worker
     depends_on:
       - postgres
@@ -111,19 +122,17 @@ services:
       AIRFLOW__CORE__FERNET_KEY: "LzM1Y2VhM2Y0NjJhMGQ2ZTM0YmNmYmY1YmRmZDI5Njk="
       AIRFLOW__CELERY__RESULT_BACKEND: db+postgresql://airflow:airflow@postgres:5432/airflow
       AIRFLOW__CELERY__BROKER_URL: redis://redis:6379/0
-      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"   # << sama juga
+      AIRFLOW__WEBSERVER__SECRET_KEY: "my_super_secret_key_123"
+      JAVA_HOME: /usr/lib/jvm/java-11-openjdk-amd64
+      SPARK_HOME: /opt/spark
+      PATH: /opt/spark/bin:$PATH
       TZ: Asia/Jakarta
     volumes:
       - ./airflow/dags:/opt/airflow/dags
       - ./airflow/plugins:/opt/airflow/plugins
       - ./spark/jobs:/opt/spark/jobs
       - ./data:/mnt/data
-    command:
-      - bash
-      - -c
-      - >
-        pip install --no-cache-dir apache-airflow-providers-apache-spark pyspark &&
-        exec airflow celery worker
+    command: celery worker
 
 volumes:
   postgres_data:
