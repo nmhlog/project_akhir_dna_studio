@@ -1,0 +1,56 @@
+[2025-09-20T13:19:33.361+0000] {processor.py:186} INFO - Started process (PID=241) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:19:33.362+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:19:33.365+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.365+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:19:33.395+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:19:33.440+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.440+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:19:33.464+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.464+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:19:33.489+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.135 seconds
+[2025-09-20T13:20:03.903+0000] {processor.py:186} INFO - Started process (PID=257) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:03.908+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:20:03.917+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:03.917+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:04.050+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:04.083+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:04.083+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:20:04.109+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:04.109+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:20:04.167+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.274 seconds
+[2025-09-20T13:20:34.619+0000] {processor.py:186} INFO - Started process (PID=273) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:34.621+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:20:34.625+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.625+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:34.656+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:20:34.704+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.704+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:20:34.726+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.726+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:20:34.752+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.145 seconds
+[2025-09-20T13:21:04.970+0000] {processor.py:186} INFO - Started process (PID=289) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:04.971+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:21:04.975+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:04.974+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:05.003+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:05.048+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:05.047+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:21:05.072+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:05.072+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:21:05.101+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.141 seconds
+[2025-09-20T13:21:35.463+0000] {processor.py:186} INFO - Started process (PID=305) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:35.472+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:21:35.485+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.485+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:35.577+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:21:35.657+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.656+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:21:35.697+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.697+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:21:35.751+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.300 seconds
+[2025-09-20T13:22:05.921+0000] {processor.py:186} INFO - Started process (PID=321) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:05.923+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:22:05.927+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:05.926+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:05.955+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:05.987+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:05.987+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:22:06.004+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:06.004+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:22:06.034+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.123 seconds
+[2025-09-20T13:22:37.113+0000] {processor.py:186} INFO - Started process (PID=337) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:37.115+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:22:37.121+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.121+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:37.165+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:22:37.218+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.218+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:22:37.243+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.242+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:22:37.284+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.182 seconds
+[2025-09-20T13:23:08.035+0000] {processor.py:186} INFO - Started process (PID=353) to work on /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:23:08.040+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/dag_naufal_download_extract.py for tasks to queue
+[2025-09-20T13:23:08.043+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.042+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:23:08.069+0000] {processor.py:925} INFO - DAG(s) 'dag_naufal_download_data_zip' retrieved from /opt/airflow/dags/dag_naufal_download_extract.py
+[2025-09-20T13:23:08.097+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.097+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:23:08.109+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.109+0000] {dag.py:4180} INFO - Setting next_dagrun for dag_naufal_download_data_zip to None, run_after=None
+[2025-09-20T13:23:08.129+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/dag_naufal_download_extract.py took 0.102 seconds

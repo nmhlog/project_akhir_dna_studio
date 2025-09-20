@@ -1,0 +1,56 @@
+[2025-09-20T13:19:33.350+0000] {processor.py:186} INFO - Started process (PID=238) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:19:33.352+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:19:33.356+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.355+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:19:33.385+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:19:33.432+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.431+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:19:33.455+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:19:33.455+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:19:33.483+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.138 seconds
+[2025-09-20T13:20:03.900+0000] {processor.py:186} INFO - Started process (PID=254) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:03.908+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:20:03.917+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:03.917+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:04.050+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:04.083+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:04.083+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:20:04.109+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:04.109+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:20:04.167+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.282 seconds
+[2025-09-20T13:20:34.618+0000] {processor.py:186} INFO - Started process (PID=270) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:34.622+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:20:34.626+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.626+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:34.664+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:20:34.704+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.704+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:20:34.726+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:20:34.726+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:20:34.754+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.148 seconds
+[2025-09-20T13:21:04.965+0000] {processor.py:186} INFO - Started process (PID=286) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:04.968+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:21:04.972+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:04.972+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:05.000+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:05.040+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:05.040+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:21:05.061+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:05.061+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:21:05.092+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.136 seconds
+[2025-09-20T13:21:35.460+0000] {processor.py:186} INFO - Started process (PID=302) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:35.472+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:21:35.486+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.485+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:35.580+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:21:35.658+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.658+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:21:35.698+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:21:35.697+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:21:35.754+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.305 seconds
+[2025-09-20T13:22:05.908+0000] {processor.py:186} INFO - Started process (PID=318) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:05.910+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:22:05.913+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:05.913+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:05.947+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:05.988+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:05.987+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:22:06.003+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:06.003+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:22:06.036+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.146 seconds
+[2025-09-20T13:22:37.108+0000] {processor.py:186} INFO - Started process (PID=334) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:37.111+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:22:37.118+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.116+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:37.173+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:22:37.239+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.239+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:22:37.277+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:22:37.276+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:22:37.324+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.229 seconds
+[2025-09-20T13:23:08.035+0000] {processor.py:186} INFO - Started process (PID=350) to work on /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:23:08.036+0000] {processor.py:914} INFO - Processing file /opt/airflow/dags/utils/dag_naufal_check.py for tasks to queue
+[2025-09-20T13:23:08.040+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.039+0000] {dagbag.py:588} INFO - Filling up the DagBag from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:23:08.072+0000] {processor.py:925} INFO - DAG(s) 'check_pandas_dag' retrieved from /opt/airflow/dags/utils/dag_naufal_check.py
+[2025-09-20T13:23:08.098+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.097+0000] {dag.py:3239} INFO - Sync 1 DAGs
+[2025-09-20T13:23:08.109+0000] {logging_mixin.py:190} INFO - [2025-09-20T13:23:08.109+0000] {dag.py:4180} INFO - Setting next_dagrun for check_pandas_dag to None, run_after=None
+[2025-09-20T13:23:08.130+0000] {processor.py:208} INFO - Processing /opt/airflow/dags/utils/dag_naufal_check.py took 0.103 seconds
